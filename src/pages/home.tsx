@@ -1,7 +1,7 @@
 export function HomePage(){
     return (
-        <main>
-
-        </main>
+        <section>
+            this is the body
+        </section>
     );
 }

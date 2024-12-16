@@ -1,9 +1,13 @@
 import './index.css';
+import { Navbar } from './components/navbar';
+import { HomePage } from './pages/home';
 
 function App() {
-
   return (
-    "hello world"
+    <main>
+      <Navbar />
+      <HomePage />
+    </main>
   );
 }
 

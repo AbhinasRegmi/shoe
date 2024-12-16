@@ -23,5 +23,5 @@ export const navbarData = [
         label: "contact",
         link: "#contact",
         external: false,
-    },
+   },
 ] satisfies Array<NavbarItemI>;
