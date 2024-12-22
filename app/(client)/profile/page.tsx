@@ -1,5 +1,3 @@
-export default async function ProfilePage(){
-  return (
-  <div>this profile page</div>
-  )
+export default async function ProfilePage() {
+  return <div>this profile page</div>;
 }

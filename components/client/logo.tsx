@@ -1,9 +1,15 @@
+import Image from 'next/image';
+
 export function Logo() {
-	return (
-		<div className="w-full h-auto">
-			<img
-				className="object-cover w-full h-auto"
-				src="/images/logo.png" alt="website logo" />
-		</div>
-	)
+  return (
+    <div className='h-auto w-full'>
+      <Image
+        width={120}
+        height={32}
+        className='h-auto w-full object-cover'
+        src='/images/logo.webp'
+        alt='website logo'
+      />
+    </div>
+  );
 }
