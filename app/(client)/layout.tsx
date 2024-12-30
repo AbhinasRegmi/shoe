@@ -1,33 +1,23 @@
 'use client';
 
 import { Navbar } from '@/components/client/navbar';
+import { useShouldStick } from '@/hooks/sticky';
 import { cn } from '@/lib/utils';
-import { useEffect, useState } from 'react';
 
 export default function ClientLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isSticky, setIsSticky] = useState(false);
-
-  useEffect(() => {
-    function handleScroll() {
-      const offsetY = window.scrollY;
-      setIsSticky(offsetY > 0);
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const { isSticky } = useShouldStick();
 
   return (
     <main>
       <div
         className={cn(
-          isSticky && 'sticky left-0 right-0 top-0 shadow-sm',
-          'bg-background'
+          isSticky && 'sticky left-0 right-0 top-0 bg-background shadow-sm',
+          !isSticky && 'fixed left-0 right-0 top-0 bg-transparent',
+          'transition-all duration-0'
         )}
       >
         <Navbar />
